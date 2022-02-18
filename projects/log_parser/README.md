@@ -1,5 +1,5 @@
 ## Log Parser
-This program parses a log file and counts IP addresses in the file.
+This program parses a log file and extract IP addresses from the file.
 
 ## What it does
 - Accepts path to a log file as a user provided argument
