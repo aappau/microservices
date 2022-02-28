@@ -62,7 +62,7 @@ new = cars + nums
 # slice
 start = nums[:2]
 end = nums[2:]
-setp = nums[::2]
+step = nums[::2]
 
 
 # list comprehension
