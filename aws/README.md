@@ -22,6 +22,12 @@ aws configure
 aws configure --profile $profile
 ```
 
+## Usage
+
+```
+import boto3
+```
+
 ### Creating a Custom Session
 
 Session refers to AWS Management Console access
@@ -43,3 +49,29 @@ session = boto3.session.Session(profile_name="$profile_name")
 -   Newer boto3 API abstraction
 -   Provides high-level, object-oriented API
 -   Does not provide 100% API coverage of AWS services
+
+## Waiters
+
+Allows you to block code until a process is complete.
+
+## Paginator
+
+When using the `Client` certains operations returns incomplete results, to get the complete results you need to send subsequent
+
+### Limits
+
+**Default:** 50
+**IAM:** 100
+**S3:** 1000
+
+## Meta
+
+Meta allows you to access Client only methods when using Resource
+
+```
+import boto3
+
+ec2 = boto3.resource('ec2')
+
+regions = ec2.meta.client.describe_regions()
+```
