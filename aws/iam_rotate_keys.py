@@ -7,7 +7,7 @@ from datetime import datetime, timezone
 import boto3
 
 
-MAX_KEY_AGE = 10
+MAX_KEY_AGE = 90
 
 
 client = boto3.client("iam")
@@ -70,7 +70,7 @@ def deactivate_access_keys():
 
         key_age = calculate_key_age(create_date)
 
-        if key_age < MAX_KEY_AGE:
+        if key_age > MAX_KEY_AGE:
             print(f"Deactivating key for {username}")
 
             client.update_access_key(
