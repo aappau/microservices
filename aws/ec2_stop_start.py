@@ -18,7 +18,7 @@ filters = [filter_items["type"], filter_items["tag"], filter_items["state"]]
 
 def get_aws_regions():
     """
-    return list of all AWS regions
+    returns list of all AWS regions
     """
 
     ec2 = boto3.resource("ec2")
@@ -31,7 +31,7 @@ def get_aws_regions():
 
 def start_stop_instances(action: str):
     """
-    stops and start instances
+    stop and start instances
     """
 
     regions = get_aws_regions()
